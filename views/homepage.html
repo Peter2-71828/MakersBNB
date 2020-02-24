@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  Hello world
+  <h1> Makers AirBnB </h1>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
 <body>
-  
+
+  <script>
+        function loginPage() {
+            location.replace("../views/login.html")
+}       function hostPage() { 
+            location.replace("../views/host.html")
+}
+    </script>
+            <button onclick="loginPage()", id="change">Go to login</button>
+            <button onclick="hostPage()", id="change">Go to host page</button>
+</body>
 </body>
 </html>
