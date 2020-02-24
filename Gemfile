@@ -12,3 +12,4 @@ gem "simplecov-console"
 
 gem "activerecord"
 gem "jquery"
+gem "sqlite3"
