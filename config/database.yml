@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: MakersAirBnb
+  database: MakersAirBnB
   pool: 2
   
 
