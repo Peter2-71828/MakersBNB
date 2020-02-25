@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In</title>
 </head>
 <body>
+    <h2>Please sign in below</h2>
+    <form id="signInForm">
+        <label for="signingIn">Name</label><br>
+        <input type="text" id="user" placeholder="Your Name">
+    </form>
     <script>
         function myFunction() {
-            location.replace("file:///Users/tobydawson/Projects/MakersBNB/homepage.html")
+            window.location.href = "http://127.0.0.1:5500"
 }
     </script>
     
-    <button onclick="myFunction()", id="change">Go to homepage</button>
+    <button onclick="myFunction()", id="change">Submit</button>
 </body>
 </html>
