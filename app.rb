@@ -1,5 +1,5 @@
 require 'sinatra/base'
-# require './lib/player'
+require './lib/space.rb'
 
 
 class MakersBNB < Sinatra::Base
@@ -11,7 +11,23 @@ class MakersBNB < Sinatra::Base
 
   get '/login' do 
     erb :login
-    # $name = params[:name]
+  end 
+
+  post '/login' do 
+    $name = params[:name]
+    redirect '/'
+  end 
+
+  get '/new_space' do 
+    erb :new_space
+  end 
+
+  post '/new_space' do 
+    p params
+    $space_name = params[:space_name]
+    $description =  params[:description]
+    $price = params[:price]
+    redirect '/'
   end 
 
   run! if app_file == $0

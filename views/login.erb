@@ -7,16 +7,11 @@
 </head>
 <body>
     <h2>Please sign in below</h2>
-    <form id="signInForm">
+    <form action="/login" method="post">
         <label for="signingIn">Name</label><br>
-        <input type="text" id="user" placeholder="Your Name">
+        <input type="text" name="name" placeholder="Your Name">
+        <input type="submit" value="Submit">
     </form>
-    <script>
-        function submitToHomepage() {
-            window.location.href = "/"
-}
-    </script>
-    
-    <button onclick="submitToHomepage()", id="change">Submit</button>
+ 
 </body>
 </html>

@@ -10,14 +10,12 @@
       <div id="quotes">
         The best BNB in London
       </div><br>
-    
-
-
-<button onclick="loginPage()", id="change">login</button>
-<script>
-    function loginPage() {
-          window.location.href = "/login"
-    }
-</script>
+      <%= $name %>
+      
+<form action='/login'> <input type='submit' value='login'> </form> 
+<form action='/new_space'> <input type='Submit' value='List New Space'> </form>
+      <%= $space_name %>
+      <%= $description %>
+      <%= $price %>
     </body>
 </html>
