@@ -13,3 +13,12 @@ gem "simplecov-console"
 gem "activerecord"
 gem "jquery"
 gem "sqlite3"
+gem 'pg'
+gem 'rake' 
+gem 'sinatra-activerecord'
+
+gem 'bcrypt'
+gem 'pry'
+gem 'sinatra'
+gem 'sinatra-flash'
+gem 'json'

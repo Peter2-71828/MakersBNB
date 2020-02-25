@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: MakersAirBnb
+  pool: 2
+  
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: MakersAirBnBProd
+  pool: 2
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: MakersAirBnbTest
+  pool: 2
+ 
