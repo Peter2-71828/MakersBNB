@@ -1,11 +1,12 @@
 require 'sinatra/base'
-require './lib/space.rb'
+require './lib/space'
 
 
 class MakersBNB < Sinatra::Base
 
 
   get '/' do
+  
     erb :index
   end
 
@@ -24,9 +25,11 @@ class MakersBNB < Sinatra::Base
 
   post '/new_space' do 
     p params
-    $space_name = params[:space_name]
-    $description =  params[:description]
-    $price = params[:price]
+    space_name = params[:space_name]
+    p space_name
+    description = params[:description]
+    price = params[:price]
+    Space.new(space_name, description, price)
     redirect '/'
   end 
 

@@ -1,6 +1,6 @@
 
 class Space
-  # attr_reader :name, :description, :price
+  attr_reader :name, :description, :price
 
   def initialize(name, description, price)
     @name = name
