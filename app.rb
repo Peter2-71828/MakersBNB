@@ -1,9 +1,14 @@
+
+require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/activerecord'
+require 'sinatra/base'
+require 'sinatra/flash'
+require './models/user'
 require './lib/space'
 
-
 class MakersBNB < Sinatra::Base
-
+  enable :sessions
 
   get '/' do
   
@@ -15,7 +20,10 @@ class MakersBNB < Sinatra::Base
   end 
 
   post '/login' do 
-    $name = params[:name]
+    User.create(name: params["name"], email: params["email"], password: params["password"] )
+    # $name = params[:name]
+    # $email = params[:email]
+    # $password = params[:password]
     redirect '/'
   end 
 
@@ -29,7 +37,8 @@ class MakersBNB < Sinatra::Base
     p space_name
     description = params[:description]
     price = params[:price]
-    Space.new(space_name, description, price)
+    dates = params[:dates]
+    Space.new(space_name, description, price, dates)
     redirect '/'
   end 
 
