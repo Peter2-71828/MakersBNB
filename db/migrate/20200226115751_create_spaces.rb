@@ -7,3 +7,4 @@ class CreateSpaces < ActiveRecord::Migration[6.0]
       s.text  :description
   end
 end
+end

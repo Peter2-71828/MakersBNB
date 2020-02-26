@@ -12,11 +12,12 @@ class MakersBNB < Sinatra::Base
   enable :sessions
 
   get '/' do
-  
+   p  @space = Space.all
     erb :index
   end
 
   get '/login' do 
+    
     erb :login
   end 
 
@@ -30,7 +31,7 @@ class MakersBNB < Sinatra::Base
   end 
 
   post '/new_space' do
-    p Space.create(name: params["name"], description: params["description"], price: params["price"], dates: params["dates"] )
+    p Space.create(name: params["name"], description: params["description"], price: params["price"], date: params["date"] )
     redirect '/'
   end 
 

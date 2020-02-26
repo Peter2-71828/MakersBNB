@@ -10,13 +10,20 @@
       <div id="quotes">
         The best BNB in London
       </div><br>
-      <%= $name %><br>
-      <%= $email %><br>
-      <%= $password %><br>
+      <% @space.each do |space| %> <br>
+      <div>
+        <p> Spaces: <%= space.name%>
+        <p> About: <%= space.description%>
+        <p> Price: <%= space.price%>
+        
+        </div>  
+
+      <%end%>
+     
       
 <form action='/login'> <input type='submit' value='login'> </form> 
 <form action='/new_space'> <input type='Submit' value='List New Space'> </form>
 
-  
+
     </body>
 </html>
