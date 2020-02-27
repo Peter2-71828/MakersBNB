@@ -1,7 +1,7 @@
 class Space < ActiveRecord::Base
 
-
-    has_many :bookings 
-    has_many :listings
+    belongs_to :users
+    has_many :bookings
+    has_many :availability
 
 end
