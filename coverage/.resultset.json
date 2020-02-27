@@ -10,6 +10,9 @@
           1,
           1,
           1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -25,43 +28,8 @@
           null,
           null
         ]
-      },
-      "/Users/joeellingworth/Projects/Makers/group_projects/MakersBNB/spec/space_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/joeellingworth/Projects/Makers/group_projects/MakersBNB/spec/user_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1582713650
+    "timestamp": 1582825573
   }
 }

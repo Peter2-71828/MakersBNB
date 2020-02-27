@@ -35,8 +35,6 @@ class MakersBNB < Sinatra::Base
 
   get '/spaces' do
     @message = "Welcome #{session[:user].name}"
-    p @message
-    p session[:user].id 
     @space = Space.all
     erb :index
    end
