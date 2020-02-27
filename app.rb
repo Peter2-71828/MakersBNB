@@ -6,6 +6,8 @@ require 'sinatra/base'
 require 'sinatra/flash'
 require './models/user'
 require './models/space'
+require './models/bookings'
+require './models/availability'
 
 
 class MakersBNB < Sinatra::Base
@@ -44,12 +46,22 @@ class MakersBNB < Sinatra::Base
     erb :details
   end 
 
+  post '/spaces/info' do 
+    Bookings.create(start_date: params["start_date"], end_date: params["end_date"], users_id: session[:user].id, spaces_id: params["space_id"])
+    
+    redirect '/spaces/confirmation'
+  end 
+
+  get '/spaces/confirmation' do 
+    erb :confirmation
+  end 
+
   get '/new_space' do 
     erb :new_space
   end 
 
   post '/new_space' do
-    p Space.create(name: params["name"], description: params["description"], price: params["price"], date: params["date"])
+    p Space.create(name: params["name"], description: params["description"], price_per_night: params["price_per_night"], date: params["date"], users_id: session[:user].id)
     redirect '/spaces'
   end 
 

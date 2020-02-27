@@ -8,16 +8,17 @@
 </head>
 <body>
 
-<%= @space.name %><br>
-<%= @space.description %><br>
-<%= @space.price %><br>
+  <%= @space.name %><br>
+  <%= @space.description %><br>
+  <%= @space.price_per_night %><br>
+  <%= @space.id %><br>
 
-
-  
-
-  <form action='/spaces'>
-    <label>Book</label> <br>
-    <input type="date" name="date" rows="1" cols="71"><br>
+  <form action='/spaces/info' method="post">
+    <label>Book From: </label> <br>
+    <input type="date" name="start_date" rows="1" cols="71"><br>
+    <label>Until: </label> <br>
+    <input type="date" name="end_date" rows="1" cols="71"><br>
+    <input type ="hidden" name="space_id" value=<%=@space.id%>>
     <input type='submit' value='Book Space'>
   </form>
   <br>

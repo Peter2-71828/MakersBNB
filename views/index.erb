@@ -17,8 +17,10 @@
       <div>
         <p> Spaces: <%= space.name%>
         <p> About: <%= space.description%>
-        <p> Price: <%= space.price%>
+        <p> Price: <%= space.price_per_night%>
         <form action="/spaces/info" method="get">
+
+    
         <input type ="hidden" name ="space_id" value=<%=space.id%>>
         <input type="submit" value="More Details">
       </form>
