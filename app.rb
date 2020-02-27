@@ -8,21 +8,22 @@ require './models/user'
 require './models/space'
 require './models/bookings'
 require './models/availability'
+require './models/email'
 
 
 class MakersBNB < Sinatra::Base
   enable :sessions
 
-  get '/' do 
+  get '/' do
     redirect '/login'
-  end 
-  
-  
+  end
+
+
   get '/login' do
    erb :login
   end
 
-  post '/login' do 
+  post '/login' do
     if User.where(email: params["email"], password: params["password"]).exists?
       session[:user] = (User.find_by email: params["email"])
       redirect '/spaces'
@@ -30,8 +31,8 @@ class MakersBNB < Sinatra::Base
       User.create(name: params["name"], email: params["email"], password: params["password"] )
       session[:user] = (User.find_by email: params["email"])
       redirect '/spaces'
-    end 
-   end 
+    end
+   end
 
   get '/spaces' do
     @message = "Welcome #{session[:user].name}"
@@ -39,20 +40,24 @@ class MakersBNB < Sinatra::Base
     erb :index
    end
 
-  get '/spaces/info' do 
+  get '/spaces/info' do
     @space = Space.find_by id: params["space_id"]
     erb :details
-  end 
+  end
 
-  post '/spaces/info' do 
+  post '/spaces/info' do
     Bookings.create(start_date: params["start_date"], end_date: params["end_date"], users_id: session[:user].id, spaces_id: params["space_id"])
-    
-    redirect '/spaces/confirmation'
-  end 
 
-  get '/spaces/confirmation' do 
+    redirect '/spaces/confirmation'
+  end
+
+  get '/spaces/confirmation' do
+    p Email.send #add user email
     erb :confirmation
-  end 
+  end
+
+
+  get '/new_space' do
 
   get '/my_spaces' do 
     @spaces = Space.where users_id: session[:user].id
@@ -67,12 +72,12 @@ class MakersBNB < Sinatra::Base
 
   get '/new_space' do 
     erb :new_space
-  end 
+  end
 
   post '/new_space' do
-    p Space.create(name: params["name"], description: params["description"], price_per_night: params["price_per_night"], date: params["date"], users_id: session[:user].id)
+    Space.create(name: params["name"], description: params["description"], price_per_night: params["price_per_night"], date: params["date"], users_id: session[:user].id)
     redirect '/spaces'
-  end 
+  end
 
 
   run! if app_file == $0
