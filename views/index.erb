@@ -18,13 +18,15 @@
         <p> Spaces: <%= space.name%>
         <p> About: <%= space.description%>
         <p> Price: <%= space.price%>
-        
+        <form action="/spaces/info" method="get">
+        <input type ="hidden" name ="space_id" value=<%=space.id%>>
+        <input type="submit" value="More Details">
+      </form>
         </div>  
 
       <%end%>
      
       
-<form action='/login'> <input type='submit' value='login'> </form> 
 <form action='/new_space'> <input type='Submit' value='List New Space'> </form>
 
 
