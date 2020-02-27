@@ -52,25 +52,22 @@ class MakersBNB < Sinatra::Base
   end
 
   get '/spaces/confirmation' do
-    p Email.send #add user email
+    Email.send #add user email
     erb :confirmation
   end
 
-
-  get '/new_space' do
-
-  get '/my_spaces' do 
+  get '/my_spaces' do
     @spaces = Space.where users_id: session[:user].id
-    p @spaces
+    @spaces
     erb :my_spaces
-  end 
+  end
 
-  post '/my_spaces' do 
+  post '/my_spaces' do
     Space.destroy(params["space_id"])
     erb :confirm_delete_space
-  end 
+  end
 
-  get '/new_space' do 
+  get '/new_space' do
     erb :new_space
   end
 
