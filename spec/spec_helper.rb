@@ -6,6 +6,7 @@ require 'rspec'
 require './app.rb'
 require 'simplecov'
 require 'simplecov-console'
+require_relative './setup_test_database'
 
 Capybara.app = MakersBNB
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -21,6 +22,8 @@ RSpec.configure do |config|
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
   end
 end
+
+ENV['ENVIRONMENT'] = 'test'
 
 RSpec.configure do |config|
   config.before(:each) do
