@@ -1,6 +1,26 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/tobydawson/Projects/MakersBNB/spec/database_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/tobydawson/Projects/MakersBNB/spec/features/homepage_spec.rb": {
         "lines": [
           1,
@@ -62,6 +82,6 @@
         ]
       }
     },
-    "timestamp": 1582810374
+    "timestamp": 1582812950
   }
 }

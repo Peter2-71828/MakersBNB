@@ -1,9 +1,5 @@
-require 'pg'
+feature 'sign in' do
 
-p 'setting up test database...'
-def setup_test_database 
-
-connection = PG.connect(dbname: 'makersairbnbtest')
-
-connection.exec("TRUNCATE users;")
-end
+    scenario 'a user can add his/her details and log in' do
+        visit('/')
+        fill_
