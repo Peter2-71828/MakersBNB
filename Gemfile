@@ -11,7 +11,6 @@ gem "simplecov-console"
 gem "activerecord"
 gem "jquery"
 gem "sqlite3"
-gem 'pg'
 gem 'rake' 
 gem 'sinatra-activerecord'
 

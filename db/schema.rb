@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_115751) do
+ActiveRecord::Schema.define(version: 2020_02_27_095354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availibility", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.bigint "users_id"
+    t.bigint "spaces_id"
+    t.index ["spaces_id"], name: "index_availibility_on_spaces_id"
+    t.index ["users_id"], name: "index_availibility_on_users_id"
+  end
 
   create_table "spaces", force: :cascade do |t|
     t.string "name"
@@ -30,4 +39,6 @@ ActiveRecord::Schema.define(version: 2020_02_26_115751) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "availibility", "spaces", column: "spaces_id"
+  add_foreign_key "availibility", "users", column: "users_id"
 end
