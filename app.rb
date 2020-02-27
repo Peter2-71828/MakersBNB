@@ -47,7 +47,6 @@ class MakersBNB < Sinatra::Base
 
   post '/spaces/info' do
     Bookings.create(start_date: params["start_date"], end_date: params["end_date"], users_id: session[:user].id, spaces_id: params["space_id"])
-
     redirect '/spaces/confirmation'
   end
 
@@ -58,7 +57,6 @@ class MakersBNB < Sinatra::Base
 
   get '/my_spaces' do
     @spaces = Space.where users_id: session[:user].id
-    @spaces
     erb :my_spaces
   end
 
