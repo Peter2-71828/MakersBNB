@@ -56,6 +56,17 @@ class MakersBNB < Sinatra::Base
     erb :confirmation
   end 
 
+  get '/my_spaces' do 
+    @spaces = Space.where users_id: session[:user].id
+    p @spaces
+    erb :my_spaces
+  end 
+
+  post '/my_spaces' do 
+    Space.destroy(params["space_id"])
+    erb :confirm_delete_space
+  end 
+
   get '/new_space' do 
     erb :new_space
   end 
