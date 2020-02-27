@@ -32,17 +32,24 @@ class MakersBNB < Sinatra::Base
    end 
 
   get '/spaces' do
-    @message = "Welcome  #{session[:user]}"
+    @message = "Welcome #{session[:user].name}"
+    p @message
+    p session[:user].id 
     @space = Space.all
     erb :index
    end
+
+  get '/spaces/info' do 
+    @space = Space.find_by id: params["space_id"]
+    erb :details
+  end 
 
   get '/new_space' do 
     erb :new_space
   end 
 
   post '/new_space' do
-    p Space.create(name: params["name"], description: params["description"], price: params["price"], date: params["date"] )
+    p Space.create(name: params["name"], description: params["description"], price: params["price"], date: params["date"])
     redirect '/spaces'
   end 
 
