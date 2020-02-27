@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<% @spaces.each do |space| %> <br>
+      <div>
+        <p> Spaces: <%= space.name%>
+        <p> About: <%= space.description%>
+        <p> Price: <%= space.price_per_night%>
+        </div>
+        <form action="/my_spaces" method="post">
+        <input type ="hidden" name ="space_id" value=<%=space.id%>>
+        <input type="submit" value="Delete This Space">
+        <br>
+
+         <%end%>
+        <br>
+  <form action='/spaces'> <input type='Submit' value='Back To Spaces'> </form>
+</body>
+</html>

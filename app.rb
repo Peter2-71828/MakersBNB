@@ -35,8 +35,6 @@ class MakersBNB < Sinatra::Base
 
   get '/spaces' do
     @message = "Welcome #{session[:user].name}"
-    p @message
-    p session[:user].id 
     @space = Space.all
     erb :index
    end
@@ -54,6 +52,17 @@ class MakersBNB < Sinatra::Base
 
   get '/spaces/confirmation' do 
     erb :confirmation
+  end 
+
+  get '/my_spaces' do 
+    @spaces = Space.where users_id: session[:user].id
+    p @spaces
+    erb :my_spaces
+  end 
+
+  post '/my_spaces' do 
+    Space.destroy(params["space_id"])
+    erb :confirm_delete_space
   end 
 
   get '/new_space' do 
