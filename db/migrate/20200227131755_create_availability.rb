@@ -1,6 +1,6 @@
 class CreateAvailability < ActiveRecord::Migration[6.0]
   def change
-    create_table :availibility do |a|
+    create_table :availability do |a|
       a.datetime :start_date
       a.datetime :end_date
       a.references :users, foreign_key: true

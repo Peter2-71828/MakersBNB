@@ -72,7 +72,7 @@ class MakersBNB < Sinatra::Base
 
   post '/new_space' do
     Space.create(name: params["name"], description: params["description"], price_per_night: params["price_per_night"], date: params["date"], users_id: session[:user].id)
-    Availability.create(date: params["date"], users_id: session[:user].id)
+    Availability.create(date: params["date"], users_id: session[:user], spaces_id: (Space.find_by name: params["name"]).id)
     redirect '/spaces'
   end
 
