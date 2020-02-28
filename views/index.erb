@@ -6,12 +6,14 @@
     <title>The High Fives BNB</title>
   </head>
   <body>
+        
 
     <h1>The High Fives BNB</h1>
       <div id="quotes">
         The best BNB in London
         <br>
         <%= @message %>
+        <br>
       </div><br>
       <% @space.each do |space| %> <br>
       <div>
@@ -28,8 +30,12 @@
       <%end%>
       <br>
       
-<form action='/new_space'> <input type='Submit' value='List New Space'> </form>
+<form action='/new_space'> <input type='Submit' name="Add" value='Add'> </form>
 <form action='/my_spaces'> <input type='Submit' value='View my Spaces'> </form>
 
     </body>
 </html>
+
+<form action='/new_space'>
+        <input type='Submit' name="Add" value='Add'>
+        </form>

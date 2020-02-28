@@ -1,13 +1,31 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joeellingworth/Projects/Makers/group_projects/MakersBNB/spec/features/homepage_spec.rb": {
+      "/Users/joeellingworth/Projects/Makers/group_projects/MakersBNB/spec/features/list_new_spaces_spec.rb": {
         "lines": [
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
-          1,
-          1,
-          1,
+          null
+        ]
+      },
+      "/Users/joeellingworth/Projects/Makers/group_projects/MakersBNB/spec/features/signin_to_hompage_spec.rb": {
+        "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -17,19 +35,12 @@
           null
         ]
       },
-      "/Users/joeellingworth/Projects/Makers/group_projects/MakersBNB/spec/features/login_spec.rb": {
+      "/Users/joeellingworth/Projects/Makers/group_projects/MakersBNB/spec/features/view_my_spaces_spec.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          0,
-          null,
-          null
+
         ]
       }
     },
-    "timestamp": 1582883083
+    "timestamp": 1582899553
   }
 }

@@ -9,6 +9,7 @@ require 'rspec'
 require './app.rb'
 require 'simplecov'
 require 'simplecov-console'
+require 'features/web_helpers'
 
 DB_ENV ||= 'test'
 connection_details = YAML::load(File.open('./config/database.yml'))
