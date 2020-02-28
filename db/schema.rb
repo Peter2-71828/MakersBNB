@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 2020_02_27_131755) do
   create_table "availabilities", id: :bigint, default: -> { "nextval('availability_id_seq'::regclass)" }, force: :cascade do |t|
     t.datetime "date"
     t.bigint "users_id"
+    t.bigint "spaces_id"
     t.index ["users_id"], name: "index_availability_on_users_id"
   end
 
   create_table "bookings", force: :cascade do |t|
     t.datetime "start_date"
-    t.datetime "end_date"
     t.bigint "users_id"
     t.bigint "spaces_id"
     t.index ["spaces_id"], name: "index_bookings_on_spaces_id"
