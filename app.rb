@@ -76,11 +76,15 @@ class MakersBNB < Sinatra::Base
     erb :new_space
   end
 
+    
   post '/new_space' do
-    Space.create(name: params["name"], description: params["description"], price_per_night: params["price_per_night"], date: params["date"], users_id: session[:user].id)
-    Availability.create(date: params["date"], users_id: session[:user].id, spaces_id: (Space.find_by name: params["name"]).id)
-    # required improvmennt of spaces_id collection to avoid error when multiple spaces have the same name
-    redirect '/spaces'
+    if params['name'] == "" || params['description'] == "" || params['price_per_night'] == "" || params['date'] == ""
+      redirect '/spaces' 
+    else
+        Space.create(name: params["name"], description: params["description"], price_per_night: params["price_per_night"], date: params["date"], users_id: session[:user].id)
+        Availability.create(date: params["date"], users_id: session[:user].id)
+        redirect '/spaces'
+    end
   end
 
   run! if app_file == $0
