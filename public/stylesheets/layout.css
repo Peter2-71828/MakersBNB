@@ -1,0 +1,74 @@
+html,
+
+body .container {
+  background-image: url(/images/beach.jpg);
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  position: static;
+}
+
+.navbar {
+  background-color: #2a3cc2;
+  opacity: 0.6;
+
+  display: flex;
+  font-size: 1.5em;
+  padding: 0.7em;
+}
+
+.nav-link,
+.navbar-brand {
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.form-signin .title {
+  margin-top: 3em;
+}
+
+.form-signin .first-line {
+  margin-bottom: -0.7em;
+}
+
+.form-signin {
+  width: 100%;
+  text-align: center;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  text-align: center;
+  box-sizing: border-box;
+  height: auto;
+  padding: 5px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin input[type="date"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
