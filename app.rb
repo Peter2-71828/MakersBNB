@@ -24,15 +24,19 @@ class MakersBNB < Sinatra::Base
   end
 
   post '/login' do
-    if User.where(email: params["email"], password: params["password"]).exists?
-      session[:user] = (User.find_by email: params["email"])
-      redirect '/spaces'
+    if params['name'] == "" || params['email'] == "" || params['password'] == ""
+      redirect '/login'
     else
-      User.create(name: params["name"], email: params["email"], password: params["password"] )
-      session[:user] = (User.find_by email: params["email"])
-      redirect '/spaces'
+      if User.where(email: params["email"], password: params["password"]).exists?
+        session[:user] = (User.find_by email: params["email"])
+        redirect '/spaces'
+      else
+        User.create(name: params["name"], email: params["email"], password: params["password"] )
+        session[:user] = (User.find_by email: params["email"])
+        redirect '/spaces'
+      end
     end
-   end
+  end
 
   get '/spaces' do
     @message = "Welcome #{session[:user].name}"
