@@ -13,6 +13,7 @@ class MakersBNB < Sinatra::Base
 
   get '/' do
    p  @space = Space.all
+  
     erb :index
   end
 
@@ -22,20 +23,26 @@ class MakersBNB < Sinatra::Base
   end 
 
   post '/login' do 
-   p User.create(name: params["name"], email: params["email"], password: params["password"] )
+  if Users.none
+      redirect '/login'
+  else
+   p Users.create(name: params["name"], email: params["email"], password: params["password"] )
     redirect '/'
   end 
+end
 
   get '/new_space' do 
     erb :new_space
   end 
 
   post '/new_space' do
-    if Space.none
-        redirect '/new_space'
-    else
-      p Space.create(name: params["name"], description: params["description"], price_per_night: params["price"], date: params["date"] )
-      redirect '/'
+    
+  if Space.create(name: params["name"], description: params["description"], price_per_night: params["price"], date: params["date"] ).include?(" ")
+    
+  else
+    p Space.create(name: params["name"], description: params["description"], price_per_night: params["price"], date: params["date"] )
+    redirect '/'
+          
   end 
 end
 
