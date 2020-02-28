@@ -7,13 +7,16 @@
   <title>Document</title>
 </head>
 <body>
-  <form action='/new_space' method='post'>
+  <form class="form-signin" action='/new_space' method='post'>
+    <h2>
+      Please fill in the form below
+    </h2>
     <label>Space Name</label> <br>
-    <input type="text" name="name" rows="1" cols="70"><br> 
+    <input type="text" class="form-control" name="name" rows="1" cols="70" placeholder="Space name"><br> 
     <label>Description</label> <br>
-    <input type="text" name="description" rows="5" cols="90"><br>
+    <textarea type="text" class="form-control" name="description" rows="5" cols="40" placeholder="Description"></textarea><br>
     <label>Price</label> <br>
-    <input type="text" name="price_per_night" rows="1" cols="71"><br>
+    <input type="text" class="form-control" name="price_per_night" rows="1" cols="71" placeholder="Price"><br>
     <label>Available dates</label> <br>
     <input type="date" name="date" rows="1" cols="71"><br>
     <input type='submit' value='Post Space'>

@@ -1,25 +1,10 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joeellingworth/Projects/Makers/group_projects/MakersBNB/spec/features/homepage_spec.rb": {
+      "/Volumes/Macintosh HD - Data/Users/student/projects/makers_onsite/week_6/MakersBNB/spec/features/homepage_spec.rb": {
         "lines": [
           1,
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/joeellingworth/Projects/Makers/group_projects/MakersBNB/spec/features/login_spec.rb": {
-        "lines": [
-          1,
           1,
           1,
           1,
@@ -28,8 +13,20 @@
           null,
           null
         ]
+      },
+      "/Volumes/Macintosh HD - Data/Users/student/projects/makers_onsite/week_6/MakersBNB/spec/features/login_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1582825638
+    "timestamp": 1582817214
   }
 }

@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2020_02_27_131755) do
     t.datetime "date"
     t.bigint "users_id"
     t.bigint "spaces_id"
-    t.index ["users_id"], name: "index_availability_on_users_id"
   end
 
   create_table "bookings", force: :cascade do |t|
