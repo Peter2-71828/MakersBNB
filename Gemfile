@@ -12,8 +12,9 @@ gem "activerecord"
 gem "jquery"
 gem "sqlite3"
 gem 'pg'
-gem 'rake' 
+gem 'rake'
 gem 'sinatra-activerecord'
+gem 'sendgrid-ruby'
 
 gem 'bcrypt'
 gem 'pry'

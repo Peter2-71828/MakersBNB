@@ -1,4 +1,4 @@
-class availablity < ActiveRecord::Base
+class Availability < ActiveRecord::Base
 
     belongs_to :spaces
 
