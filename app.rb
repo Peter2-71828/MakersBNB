@@ -66,6 +66,8 @@ class MakersBNB < Sinatra::Base
     erb :confirm_delete_space
   end
 
+  get '/new_space' do
+    erb :new_space
   end
 
   post '/new_space' do
