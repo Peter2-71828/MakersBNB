@@ -31,9 +31,13 @@ class MakersBNB < Sinatra::Base
   end 
 
   post '/new_space' do
-    p Space.create(name: params["name"], description: params["description"], price_per_night: params["price"], date: params["date"] )
-    redirect '/'
+    if Space.none
+        redirect '/new_space'
+    else
+      p Space.create(name: params["name"], description: params["description"], price_per_night: params["price"], date: params["date"] )
+      redirect '/'
   end 
+end
 
 
   run! if app_file == $0
