@@ -1,14 +1,14 @@
 html,
-body {
+
+body .container {
+  background-image: url(/images/beach.jpg);
+  width: auto;
+  height: auto;
   padding: 0;
   margin: 0;
-}
-
-body {
-  background-image: url(/images/beach.jpg);
   background-size: cover;
   background-position: center;
-  position: relative;
+  position: static;
 }
 
 .navbar {
@@ -37,6 +37,8 @@ body {
 .navbar-collapse {
   justify-content: flex-end;
 } */
+
+
 
 .form-signin .title {
   margin-top: 3em;
