@@ -47,12 +47,18 @@ class MakersBNB < Sinatra::Base
   end
 
   post '/spaces/info' do
-    Bookings.create(start_date: params["start_date"], end_date: params["end_date"], users_id: session[:user].id, spaces_id: params["space_id"])
-    redirect '/spaces/confirmation'
+    if Availability.where(date: params["start_date"], spaces_id: session[:space]).exists?
+      Bookings.create(start_date: params["start_date"], users_id: session[:user].id, spaces_id: params["space_id"])
+      redirect '/spaces/confirmation'
+    else
+      redirect '/spaces'
+    end
   end
 
   get '/spaces/confirmation' do
-    Email.send # ((User.find_by id: session[:space].users_id).email)
+    Availability.destroy((Availability.find_by spaces_id: session[:space].id).id)
+    # Space.destroy(session[:space].id)
+    Email.send  # ((User.find_by id: session[:space].users_id).email)
     erb :confirmation
   end
 
@@ -72,7 +78,8 @@ class MakersBNB < Sinatra::Base
 
   post '/new_space' do
     Space.create(name: params["name"], description: params["description"], price_per_night: params["price_per_night"], date: params["date"], users_id: session[:user].id)
-    Availability.create(date: params["date"], users_id: session[:user].id)
+    Availability.create(date: params["date"], users_id: session[:user].id, spaces_id: (Space.find_by name: params["name"]).id)
+    # required improvmennt of spaces_id collection to avoid error when multiple spaces have the same name
     redirect '/spaces'
   end
 
