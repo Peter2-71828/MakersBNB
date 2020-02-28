@@ -56,7 +56,6 @@ class MakersBNB < Sinatra::Base
 
   get '/my_spaces' do 
     @spaces = Space.where users_id: session[:user].id
-    p @spaces
     erb :my_spaces
   end 
 
