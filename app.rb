@@ -52,7 +52,7 @@ class MakersBNB < Sinatra::Base
   end
 
   get '/spaces/confirmation' do
-    Email.send((User.find_by id: session[:space].users_id).email)
+    Email.send # ((User.find_by id: session[:space].users_id).email)
     erb :confirmation
   end
 
@@ -72,7 +72,7 @@ class MakersBNB < Sinatra::Base
 
   post '/new_space' do
     Space.create(name: params["name"], description: params["description"], price_per_night: params["price_per_night"], date: params["date"], users_id: session[:user].id)
-    Availability.create(date: params["date"], users: session[:users_id].id)
+    Availability.create(date: params["date"], users_id: session[:user].id)
     redirect '/spaces'
   end
 

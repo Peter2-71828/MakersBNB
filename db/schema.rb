@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 2020_02_27_131755) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "availibility", force: :cascade do |t|
+  create_table "availabilities", id: :bigint, default: -> { "nextval('availability_id_seq'::regclass)" }, force: :cascade do |t|
     t.datetime "date"
     t.bigint "users_id"
-    t.index ["users_id"], name: "index_availibility_on_users_id"
+    t.index ["users_id"], name: "index_availability_on_users_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_131755) do
     t.string "password"
   end
 
-  add_foreign_key "availibility", "users", column: "users_id"
+  add_foreign_key "availabilities", "users", column: "users_id"
   add_foreign_key "bookings", "spaces", column: "spaces_id"
   add_foreign_key "bookings", "users", column: "users_id"
   add_foreign_key "spaces", "users", column: "users_id"
