@@ -1,9 +1,10 @@
 # MakersBNB
 
 # How to Use
-run ```bundle```  
-run ```rackup```  
-go to http://localhost:9292/ in your browser
+* clone or fork this repo  
+* run ```bundle```  
+* run ```rackup```  
+* go to http://localhost:9292/ in your browser
 
 # MVP
 ### Host
