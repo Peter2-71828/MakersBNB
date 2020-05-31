@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     activemodel (6.0.2.1)
-      activesupport (= 6.0.3.1)
+      activesupport (= 6.0.2.1)
     activerecord (6.0.2.1)
       activemodel (= 6.0.2.1)
       activesupport (= 6.0.2.1)
