@@ -9,6 +9,7 @@ gem "simplecov"
 gem "simplecov-console"
 
 gem "activerecord"
+gem "activesupport", ">= 6.0.3.1"
 gem "jquery"
 gem "sqlite3"
 gem 'pg'
